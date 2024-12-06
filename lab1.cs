@@ -1,17 +1,41 @@
-﻿
 using System;
 
-namespace lab1
+namespace MulticastDelegate
 {
-    class Name
+    public delegate void Notify(string message);
+
+    class Program
     {
+        public static void DisplayMessage1(string message)
+        {
+            Console.WriteLine("Message from DisplayMessage1: " + message);
+        }
+
+        public static void DisplayMessage2(string message)
+        {
+            Console.WriteLine("Message from DisplayMessage2: " + message);
+        }
+
+        public static void DisplayMessage3(string message)
+        {
+            Console.WriteLine("Message from DisplayMessage3: " + message);
+        }
+
         static void Main(string[] args)
         {
-            Console.Write("Please enter your name: ");
-            string userName = Console.ReadLine();
+            Notify notifyDelegate;
 
-            Console.WriteLine($"Welcome {userName},to dotnet technology");
-            Console.ReadKey();
+            notifyDelegate = DisplayMessage1;
+            notifyDelegate += DisplayMessage2;
+            notifyDelegate += DisplayMessage3;
+
+            Console.WriteLine("Invoking multicast delegate:");
+            notifyDelegate("This is multicast delegate!");
+
+            notifyDelegate -= DisplayMessage2;
+
+            Console.WriteLine("\nAfter removing DisplayMessage2:");
+            notifyDelegate("This is also multicast delegate!");
         }
     }
 }
