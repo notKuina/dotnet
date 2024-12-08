@@ -64,6 +64,6 @@ class Program
         Console.WriteLine("\nSelecting data...");
         SelectData();
 
-        Console.ReadKey(); // This line must be inside the Main method
+        Console.ReadKey(); 
     }
 }
