@@ -25,7 +25,7 @@ namespace CustomException
 
                     if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
                     {
-                        Console.WriteLine("Exiting program. Goodbye!");
+                        Console.WriteLine("Exiting program.");
                         break;
                     }
 
