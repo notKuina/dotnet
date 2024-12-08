@@ -33,7 +33,6 @@ class Program
         }
     }
 
-    // Method to delete data from the shinigamis table
     static void DeleteData(int id)
     {
         // First, check if the record exists
