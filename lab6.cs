@@ -20,7 +20,7 @@ namespace CustomException
             {
                 try
                 {
-                    Console.WriteLine("Enter your age (or type 'exit' to quit):");
+                    Console.WriteLine("Enter your age:");
                     string input = Console.ReadLine();
 
                     if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
