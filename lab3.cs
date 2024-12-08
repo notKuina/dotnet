@@ -3,10 +3,7 @@ using MySql.Data.MySqlClient;
 
 class Program
 {
-    // Corrected connection string for MySQL
     static string connectionString = "Server=localhost;Database=bleach;User ID=root;";
-
-    // Method to insert data into the shinigamis table
     static void InsertData(string name, string address, decimal salary)
     {
         string query = "INSERT INTO shinigamis (name, address, salary) VALUES (@Name, @Address, @Salary)";
@@ -30,8 +27,6 @@ class Program
             }
         }
     }
-
-    // Method to select and display data from the shinigamis table
     static void SelectData()
     {
         string query = "SELECT Id, name, address, salary FROM shinigamis";
